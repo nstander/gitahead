@@ -12,7 +12,17 @@ git submodule update'''
       steps {
         sh '''cd dep/openssl/openssl
 ./config -fPIC
-make'''
+make
+cd ../../..'''
+      }
+    }
+
+    stage('Build') {
+      steps {
+        sh '''mkdir -p build/release
+cd build/release
+cmake -G Ninja -DCMAKE_BUILD_TYPE=Release ../..
+ninja'''
       }
     }
 
