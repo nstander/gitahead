@@ -12,7 +12,7 @@ git submodule update'''
       steps {
         sh '''mkdir -p build/release
 cd build/release
-cmake -G Ninja -DCMAKE_BUILD_TYPE=Release ../..
+cmake -G Ninja -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH=/home/nstander/Qt/5.12.0/gcc_64/ ../..
 ninja'''
       }
     }
