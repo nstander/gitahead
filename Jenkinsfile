@@ -8,15 +8,6 @@ git submodule update'''
       }
     }
 
-    stage('OpenSSL') {
-      steps {
-        sh '''cd dep/openssl/openssl
-./config -fPIC
-make
-cd ../../..'''
-      }
-    }
-
     stage('Build') {
       steps {
         sh '''mkdir -p build/release
