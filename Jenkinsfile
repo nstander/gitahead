@@ -1,16 +1,18 @@
 pipeline {
   agent any
   stages {
-    stage('Configure') {
+    stage('Submodules') {
       steps {
-        sh '''echo $WORKSPACE
-./config -fPIC'''
+        sh '''git submodule init
+git submodule update'''
       }
     }
 
-    stage('Build') {
+    stage('OpenSSL') {
       steps {
-        sh 'make'
+        sh '''cd dep/openssl/openssl
+./config -fPIC
+make'''
       }
     }
 
