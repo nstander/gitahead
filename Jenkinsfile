@@ -3,7 +3,8 @@ pipeline {
   stages {
     stage('Configure') {
       steps {
-        sh './config -fPIC'
+        sh '''echo $WORKSPACE
+./config -fPIC'''
       }
     }
 
