@@ -10,7 +10,8 @@ git submodule update'''
 
     stage('Build') {
       steps {
-        sh '''rm -rf build/release
+        sh '''export Qt5_DIR=/home/nstander/Qt/5.12.0/gcc_64/
+rm -rf build/release
 mkdir -p build/release
 cd build/release
 cmake -G Ninja -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH=/home/nstander/Qt/5.12.0/gcc_64/ ../..
