@@ -19,5 +19,13 @@ ninja'''
       }
     }
 
+    stage('Statistics') {
+      steps {
+        mineRepository
+        discoverGitReferenceBuild
+        recordIssues tool: gcc()
+      }
+    }
+
   }
 }
