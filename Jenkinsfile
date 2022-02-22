@@ -20,7 +20,9 @@ ninja'''
 
     stage('Statistics') {
       steps {
-        recordIssues tool: gcc()
+        mineRepository()
+        discoverGitReferenceBuild()
+        recordIssues(tool: gcc())
       }
     }
 
