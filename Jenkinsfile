@@ -25,12 +25,11 @@ ninja'''
 
     stage('Statistics') {
       steps {
-        sh '''pwd
-ls
-STIHOME=/var/lib/jenkins/workspace/scitools/bin/linux64
+        sh '''STIHOME=/var/lib/jenkins/workspace/scitools/bin/linux64
 export LD_PRELOAD=/lib64/libfreetype.so.6
 $STIHOME/und -setlicensecode ocyMEB5boh4nrnp2
-$STIHOME/und help'''
+mkdir ccout
+$STIHOME/und analyze -errors -sarif und_analyze.sarif codecheck -sarif und_ccrecommended.sarif "SciTools\' Recommended Checks" ccout/ gitahead.und '''
         mineRepository()
         discoverGitReferenceBuild()
         recordIssues(tool: gcc())
