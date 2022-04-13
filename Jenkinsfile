@@ -29,7 +29,7 @@ ninja'''
 export LD_PRELOAD=/lib64/libfreetype.so.6
 $STIHOME/und -setlicensecode ocyMEB5boh4nrnp2
 mkdir ccout
-$STIHOME/und -db gitahead.und analyze -errors -sarif und_analyze.sarif codecheck -sarif und_ccrecommended.sarif \\"SciTools\' Recommended Checks\\" ccout/ '''
+$STIHOME/und -db gitahead.und analyze -errors -sarif und_analyze.sarif codecheck -sarif und_ccrecommended.sarif \\"SciTools\\\' Recommended Checks\\" ccout/ '''
         mineRepository()
         discoverGitReferenceBuild()
         recordIssues(tools: [gcc(), sarif(pattern: 'und_analyze.sarif', id: 'Understand Analysis'), sarif(pattern: 'und_ccrecommended.sarif', id: 'Understand Codecheck Recommended')])
