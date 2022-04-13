@@ -10,7 +10,12 @@ git submodule update'''
 
     stage('Build') {
       steps {
-        sh '''rm -rf build/release
+        sh '''cd dep/openssl/openssl
+./config -fPIC
+make
+
+cd ../../..
+rm -rf build/release
 mkdir -p build/release
 cd build/release
 cmake -G Ninja -DCMAKE_EXPORT_COMPILE_COMMANDS=1 -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH=/var/lib/jenkins/workspace/Qt/5.12.0/gcc_64/ ../..
