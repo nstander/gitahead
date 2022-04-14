@@ -33,7 +33,7 @@ ninja'''
 ./runund.sh'''
         mineRepository()
         discoverGitReferenceBuild()
-        recordIssues(tools: [gcc(), sarif(pattern: 'und_analyze.sarif', id: 'UndAnalysis', name: 'Understand Analysis'), sarif(pattern: 'und_ccrecommended.sarif', id: 'UndCCRecommended', 'Understand CodeCheck Recommended')])
+        recordIssues(tools: [gcc(), sarif(pattern: 'und_analyze.sarif', name: 'Understand Analysis', id: 'UndAnalysis'),sarif(pattern: 'und_ccrecommended.sarif', id:'UndCCRecommended', name: 'Understand Codecheck Recommended')])
       }
     }
 
