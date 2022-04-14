@@ -2,3 +2,5 @@ build
 .DS_Store
 .project
 .vscode/
+*.sarif
+ccout/
