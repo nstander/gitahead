@@ -32,7 +32,6 @@ ninja'''
         sh 'mkdir -p ccout'
         sh "#!/bin/bash\n"+"""$STIHOME/und -setlicensecode ocyMEB5boh4nrnp2 -db gitahead.und analyze -errors -sarif und_analyze.sarif codecheck -sarif und_ccrecommended.sarif "SciTools' Recommended Checks" ccout/ """
         mineRepository()
-        discoverGitReferenceBuild()
         recordIssues(tools: [gcc(), sarif(pattern: 'und_analyze.sarif', id: 'UndAnalysis', name: 'Understand Analysis'), sarif(pattern: 'und_ccrecommended.sarif', id: 'UndCCRecommended', 'Understand CodeCheck Recommended')])
       }
     }
