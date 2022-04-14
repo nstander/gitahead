@@ -29,7 +29,7 @@ ninja'''
         LD_PRELOAD = '/lib64/libfreetype.so.6'
       }
       steps {
-        sh '''$STIHOME/und -setlicensecode ocyMEB5boh4nrnp2
+        sh '''$STIHOME/und -setlicensecode ocyMEB5boh4nrnp2
 ./runund.sh'''
         mineRepository()
         discoverGitReferenceBuild()
