@@ -29,8 +29,7 @@ ninja'''
         LD_PRELOAD = '/lib64/libfreetype.so.6'
       }
       steps {
-        sh '''$STIHOME/und -setlicensecode ocyMEB5boh4nrnp2
-./runund.sh'''
+        sh './runund.sh'
         mineRepository()
         discoverGitReferenceBuild()
         recordIssues(tools: [gcc(), sarif(pattern: 'und_analyze.sarif', name: 'Understand Analysis', id: 'UndAnalysis'),sarif(pattern: 'und_ccrecommended.sarif', id:'UndCCRecommended', name: 'Understand Codecheck Recommended')])
